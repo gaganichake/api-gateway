@@ -16,7 +16,7 @@ public class ApiGatewayConfiguration {
                         .filters(f -> f.addRequestHeader("myHeader", "myUrl")
                                 .addRequestParameter("myParam", "myValue"))
                         .uri("http://httpbin.org:80"))
-                .route(p -> p.path("/curreny-exchange/**")
+                .route(p -> p.path("/currency-exchange/**")
                         .uri("lb://currency-exchange")) // Talk to Eureka Naming Server, find the location on this 'currency-exchange' service and load balance
                 .route(p -> p.path("/currency-conversion/**")
                         .uri("lb://currency-conversion"))
